@@ -1,11 +1,12 @@
 import { Box } from '@chakra-ui/react'
 import { CalculatorInput } from './CalculatorInput'
+import { InputResults } from './InputResults'
 
 export const CalculatorContainer = () => {
   return (
     <Box
       as='article'
-      w={{ base: '100%' }}
+      w={{ base: '100%', md: '55%' }}
       bgColor='white'
       display='flex'
       flexDirection={{ base: 'column', md: 'row' }}
@@ -14,6 +15,7 @@ export const CalculatorContainer = () => {
       mt='2rem'
     >
       <CalculatorInput />
+      <InputResults />
     </Box>
   )
 }

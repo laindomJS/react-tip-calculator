@@ -3,7 +3,7 @@ import { BsPersonFill } from 'react-icons/bs'
 
 export const InputPeople = () => {
   return (
-    <FormControl mt='1rem'>
+    <FormControl mt='2rem'>
       <FormLabel color='neutral.dark-grayish-cyan'>
         Number of People
       </FormLabel>

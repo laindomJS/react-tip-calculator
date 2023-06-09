@@ -22,6 +22,7 @@ export const InputBill = () => {
           bgColor='neutral.very-light-grayish-cyan'
           color='neutral.dark-grayish-cyan'
           textAlign='right'
+          autoComplete='off'
           _placeholder={{ color: 'neutral.dark-grayish-cyan', textAlign: 'right' }}
         />
       </InputGroup>
