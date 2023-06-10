@@ -1,5 +1,6 @@
-import { Grid, GridItem, Button, Input } from '@chakra-ui/react'
+import { Grid, GridItem, Input } from '@chakra-ui/react'
 import { useCalculator } from '../hooks/useCalculator'
+import { InputButton } from './InputButton'
 
 export const InputButtons = () => {
   const { setPercentage } = useCalculator()
@@ -17,69 +18,19 @@ export const InputButtons = () => {
       gap='10px'
     >
       <GridItem>
-        <Button
-          onClick={handleButtonCustom}
-          value='5'
-          bgColor='neutral.very-dark-cyan'
-          w='100%'
-          h='45'
-          transition='.2s ease-in'
-          _hover={{ bgColor: 'neutral.light-grayish-cyan' }}
-        >
-          5%
-        </Button>
+        <InputButton value={5} text='5%' />
       </GridItem>
       <GridItem>
-        <Button
-          onClick={handleButtonCustom}
-          w='100%'
-          h='45'
-          value='10'
-          bgColor='neutral.very-dark-cyan'
-          transition='.2s ease-in'
-          _hover={{ bgColor: 'neutral.light-grayish-cyan' }}
-        >
-          10%
-        </Button>
+        <InputButton value={10} text='10%' />
       </GridItem>
       <GridItem>
-        <Button
-          onClick={handleButtonCustom}
-          w='100%'
-          h='45'
-          value='15'
-          bgColor='neutral.very-dark-cyan'
-          transition='.2s ease-in'
-          _hover={{ bgColor: 'neutral.light-grayish-cyan' }}
-        >
-          15%
-        </Button>
+        <InputButton value={15} text='15%' />
       </GridItem>
       <GridItem>
-        <Button
-          onClick={handleButtonCustom}
-          w='100%'
-          h='45'
-          value='25'
-          bgColor='neutral.very-dark-cyan'
-          transition='.2s ease-in'
-          _hover={{ bgColor: 'neutral.light-grayish-cyan' }}
-        >
-          25%
-        </Button>
+        <InputButton value={25} text='25%' />
       </GridItem>
       <GridItem>
-        <Button
-          onClick={handleButtonCustom}
-          w='100%'
-          h='45'
-          value='50'
-          bgColor='neutral.very-dark-cyan'
-          transition='.2s ease-in'
-          _hover={{ bgColor: 'neutral.light-grayish-cyan' }}
-        >
-          50%
-        </Button>
+        <InputButton value={50} text='50%' />
       </GridItem>
       <GridItem>
         <Input

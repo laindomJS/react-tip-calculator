@@ -29,7 +29,7 @@ export const InputResults = () => {
         </Box>
         <Box>
           <Text
-            fontSize='20px' color='primary.strong-cyan'
+            fontSize='30px' color='primary.strong-cyan'
           >
             $ {tipBill.toFixed(2)}
           </Text>
@@ -48,7 +48,7 @@ export const InputResults = () => {
         </Box>
         <Box>
           <Text
-            fontSize='20px' color='primary.strong-cyan'
+            fontSize='30px' color='primary.strong-cyan'
           >
             $ {totalPerPerson.toFixed(2)}
           </Text>
@@ -59,7 +59,7 @@ export const InputResults = () => {
         onClick={setReset}
         bgColor='primary.strong-cyan' textTransform='uppercase'
         w='100%'
-        mt='2rem'
+        mt={{ base: '2rem', md: '35%' }}
         textAlign='center'
         color='neutral.very-dark-cyan'
         transition='.2s ease-in'

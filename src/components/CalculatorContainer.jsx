@@ -6,7 +6,7 @@ export const CalculatorContainer = () => {
   return (
     <Box
       as='article'
-      w={{ base: '100%', md: '55%' }}
+      w={{ base: '100%', md: '95%', lg: '55%' }}
       bgColor='white'
       display='flex'
       flexDirection={{ base: 'column', md: 'row' }}
