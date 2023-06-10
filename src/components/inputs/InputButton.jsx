@@ -1,5 +1,5 @@
 import { Button } from '@chakra-ui/react'
-import { useCalculator } from '../hooks/useCalculator'
+import { useCalculator } from '../../hooks/useCalculator'
 
 export const InputButton = ({ value, text }) => {
   const { setPercentage } = useCalculator()

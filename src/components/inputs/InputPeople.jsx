@@ -1,12 +1,12 @@
 import { FormControl, FormLabel, Input, Icon, InputGroup, InputLeftElement } from '@chakra-ui/react'
 import { BsPersonFill } from 'react-icons/bs'
-import { useCalculator } from '../hooks/useCalculator'
+import { useCalculator } from '../../hooks/useCalculator'
 
 export const InputPeople = () => {
   const { setNumPeople, numPeople } = useCalculator()
 
   const handleNumPeople = (e) => {
-    const value = parseFloat(e.target.value)
+    const value = parseInt(e.target.value)
     setNumPeople(isNaN(value) ? 0 : value)
   }
 

@@ -1,6 +1,6 @@
 import { FormControl, FormLabel, InputGroup, InputLeftElement, Input, Icon } from '@chakra-ui/react'
 import { FaDollarSign } from 'react-icons/fa'
-import { useCalculator } from '../hooks/useCalculator'
+import { useCalculator } from '../../hooks/useCalculator'
 
 export const InputBill = () => {
   const { bill, setBill } = useCalculator()

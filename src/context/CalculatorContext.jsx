@@ -8,7 +8,7 @@ export const CalculatorProvider = ({ children }) => {
   const initialState = {
     bill: 0.00,
     percentage: 0,
-    numPeople: 0
+    numPeople: 1
   }
 
   const [state, dispatch] = useReducer(CalculatorReducer, initialState)

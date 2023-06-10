@@ -1,8 +1,8 @@
 import { Grid, GridItem, Input } from '@chakra-ui/react'
-import { useCalculator } from '../hooks/useCalculator'
+import { useCalculator } from '../../hooks/useCalculator'
 import { InputButton } from './InputButton'
 
-export const InputButtons = () => {
+export const InputPercentage = () => {
   const { setPercentage } = useCalculator()
 
   const handleButtonCustom = (e) => {
