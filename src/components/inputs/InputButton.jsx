@@ -13,6 +13,7 @@ export const InputButton = ({ value, text }) => {
       onClick={handleButtonCustom}
       value={value}
       bgColor='neutral.very-dark-cyan'
+      color='white'
       w='100%'
       h='45'
       transition='.2s ease-in'
