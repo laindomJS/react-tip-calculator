@@ -3,9 +3,11 @@ import { useCalculator } from '../hooks/useCalculator'
 
 export const InputResults = () => {
   const { setReset, bill, percentage, numPeople } = useCalculator()
+  console.log(bill)
 
-  const tipBill = (bill * percentage) / 100
-  const totalPerPerson = (bill + tipBill) / numPeople
+  const tipAmount = (bill * percentage) / 100
+  const tipAmountPerPerson = (bill * percentage) / (100 * numPeople)
+  const totalPerPerson = (bill + tipAmount) / numPeople
 
   return (
     <Box
@@ -31,7 +33,7 @@ export const InputResults = () => {
           <Text
             fontSize='30px' color='primary.strong-cyan'
           >
-            $ {tipBill.toFixed(2)}
+            $ {tipAmountPerPerson.toFixed(2)}
           </Text>
         </Box>
       </Flex>
