@@ -3,7 +3,6 @@ import { useCalculator } from '../hooks/useCalculator'
 
 export const InputResults = () => {
   const { setReset, bill, percentage, numPeople } = useCalculator()
-  console.log(bill)
 
   const tipAmount = (bill * percentage) / 100
   const tipAmountPerPerson = (bill * percentage) / (100 * numPeople)
