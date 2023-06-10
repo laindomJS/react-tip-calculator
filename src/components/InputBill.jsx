@@ -1,7 +1,15 @@
 import { FormControl, FormLabel, InputGroup, InputLeftElement, Input, Icon } from '@chakra-ui/react'
 import { FaDollarSign } from 'react-icons/fa'
+import { useCalculator } from '../hooks/useCalculator'
 
 export const InputBill = () => {
+  const { bill, setBill } = useCalculator()
+
+  const handleBillInput = (e) => {
+    const value = parseFloat(e.target.value)
+    setBill(isNaN(value) ? 0 : value)
+  }
+
   return (
     <FormControl>
       <FormLabel color='neutral.dark-grayish-cyan'>
@@ -16,7 +24,9 @@ export const InputBill = () => {
           />
         </InputLeftElement>
         <Input
-          type='text'
+          onChange={handleBillInput}
+          value={bill === 0 ? '' : bill}
+          type='number'
           placeholder='0'
           variant='filled'
           bgColor='neutral.very-light-grayish-cyan'

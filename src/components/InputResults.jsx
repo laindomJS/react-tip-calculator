@@ -1,6 +1,12 @@
 import { Box, Flex, Text, Button } from '@chakra-ui/react'
+import { useCalculator } from '../hooks/useCalculator'
 
 export const InputResults = () => {
+  const { setReset, bill, percentage, numPeople } = useCalculator()
+
+  const tipBill = (bill * percentage) / 100
+  const totalPerPerson = (bill + tipBill) / numPeople
+
   return (
     <Box
       w='100%'
@@ -25,7 +31,7 @@ export const InputResults = () => {
           <Text
             fontSize='20px' color='primary.strong-cyan'
           >
-            0.00$
+            $ {tipBill.toFixed(2)}
           </Text>
         </Box>
       </Flex>
@@ -44,12 +50,13 @@ export const InputResults = () => {
           <Text
             fontSize='20px' color='primary.strong-cyan'
           >
-            0.00$
+            $ {totalPerPerson.toFixed(2)}
           </Text>
         </Box>
       </Flex>
 
       <Button
+        onClick={setReset}
         bgColor='primary.strong-cyan' textTransform='uppercase'
         w='100%'
         mt='2rem'

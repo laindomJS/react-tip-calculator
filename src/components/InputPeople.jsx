@@ -1,7 +1,15 @@
 import { FormControl, FormLabel, Input, Icon, InputGroup, InputLeftElement } from '@chakra-ui/react'
 import { BsPersonFill } from 'react-icons/bs'
+import { useCalculator } from '../hooks/useCalculator'
 
 export const InputPeople = () => {
+  const { setNumPeople, numPeople } = useCalculator()
+
+  const handleNumPeople = (e) => {
+    const value = parseFloat(e.target.value)
+    setNumPeople(isNaN(value) ? 0 : value)
+  }
+
   return (
     <FormControl mt='2rem'>
       <FormLabel color='neutral.dark-grayish-cyan'>
@@ -12,7 +20,9 @@ export const InputPeople = () => {
           <Icon as={BsPersonFill} boxSize={4} fill='neutral.dark-grayish-cyan' />
         </InputLeftElement>
         <Input
-          type='text'
+          onChange={handleNumPeople}
+          value={numPeople === 0 ? '' : numPeople}
+          type='number'
           placeholder='0'
           variant='filled'
           bgColor='neutral.very-light-grayish-cyan'

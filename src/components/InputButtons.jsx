@@ -1,6 +1,13 @@
 import { Grid, GridItem, Button, Input } from '@chakra-ui/react'
+import { useCalculator } from '../hooks/useCalculator'
 
 export const InputButtons = () => {
+  const { setPercentage } = useCalculator()
+
+  const handleButtonCustom = (e) => {
+    setPercentage(parseFloat(e.target.value))
+  }
+
   return (
     <Grid
       mt='2rem'
@@ -11,6 +18,7 @@ export const InputButtons = () => {
     >
       <GridItem>
         <Button
+          onClick={handleButtonCustom}
           value='5'
           bgColor='neutral.very-dark-cyan'
           w='100%'
@@ -23,6 +31,7 @@ export const InputButtons = () => {
       </GridItem>
       <GridItem>
         <Button
+          onClick={handleButtonCustom}
           w='100%'
           h='45'
           value='10'
@@ -35,6 +44,7 @@ export const InputButtons = () => {
       </GridItem>
       <GridItem>
         <Button
+          onClick={handleButtonCustom}
           w='100%'
           h='45'
           value='15'
@@ -47,6 +57,7 @@ export const InputButtons = () => {
       </GridItem>
       <GridItem>
         <Button
+          onClick={handleButtonCustom}
           w='100%'
           h='45'
           value='25'
@@ -59,9 +70,10 @@ export const InputButtons = () => {
       </GridItem>
       <GridItem>
         <Button
+          onClick={handleButtonCustom}
           w='100%'
           h='45'
-          value='59'
+          value='50'
           bgColor='neutral.very-dark-cyan'
           transition='.2s ease-in'
           _hover={{ bgColor: 'neutral.light-grayish-cyan' }}
@@ -71,6 +83,7 @@ export const InputButtons = () => {
       </GridItem>
       <GridItem>
         <Input
+          onChange={handleButtonCustom}
           color='neutral.dark-grayish-cyan'
           h='45px'
           placeholder='Custom'
