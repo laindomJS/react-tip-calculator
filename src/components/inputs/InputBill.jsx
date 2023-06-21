@@ -3,12 +3,7 @@ import { FaDollarSign } from 'react-icons/fa'
 import { useCalculator } from '../../hooks/useCalculator'
 
 export const InputBill = () => {
-  const { bill, setBill } = useCalculator()
-
-  const handleBillInput = (e) => {
-    const value = parseFloat(e.target.value)
-    setBill(isNaN(value) ? 0 : value)
-  }
+  const { bill, handleInput } = useCalculator()
 
   return (
     <FormControl>
@@ -24,7 +19,7 @@ export const InputBill = () => {
           />
         </InputLeftElement>
         <Input
-          onChange={handleBillInput}
+          onChange={handleInput}
           value={bill === 0 ? '' : bill}
           type='number'
           placeholder='0'
@@ -33,6 +28,7 @@ export const InputBill = () => {
           color='neutral.dark-grayish-cyan'
           textAlign='right'
           autoComplete='off'
+          name='bill'
           _placeholder={{ color: 'neutral.dark-grayish-cyan', textAlign: 'right' }}
         />
       </InputGroup>

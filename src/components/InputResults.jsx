@@ -5,8 +5,8 @@ export const InputResults = () => {
   const { setReset, bill, percentage, numPeople } = useCalculator()
 
   const tipAmount = (bill * percentage) / 100
-  const tipAmountPerPerson = (bill * percentage) / (100 * numPeople)
-  const totalPerPerson = (bill + tipAmount) / numPeople
+  const tipAmountPerPerson = numPeople !== 0 ? (bill * percentage) / (100 * numPeople) : 0
+  const totalPerPerson = numPeople !== 0 ? (bill + tipAmount) / numPeople : 0
 
   return (
     <Box

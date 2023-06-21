@@ -2,22 +2,10 @@ import { ACTIONS } from './actions'
 
 export const CalculatorReducer = (state, action) => {
   switch (action.type) {
-    case ACTIONS.SET_BILL:
+    case ACTIONS.SET_FIELD:
       return {
         ...state,
-        bill: action.payload
-      }
-
-    case ACTIONS.SET_PERCENTAGE:
-      return {
-        ...state,
-        percentage: action.payload
-      }
-
-    case ACTIONS.SET_NUM_PEOPLE:
-      return {
-        ...state,
-        numPeople: action.payload
+        [action.payload.field]: action.payload.value
       }
 
     case ACTIONS.RESET:
@@ -25,7 +13,7 @@ export const CalculatorReducer = (state, action) => {
         ...state,
         bill: 0,
         percentage: 0,
-        numPeople: 1
+        numPeople: 0
       }
 
     default:

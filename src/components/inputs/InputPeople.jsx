@@ -3,12 +3,7 @@ import { BsPersonFill } from 'react-icons/bs'
 import { useCalculator } from '../../hooks/useCalculator'
 
 export const InputPeople = () => {
-  const { setNumPeople, numPeople } = useCalculator()
-
-  const handleNumPeople = (e) => {
-    const value = parseInt(e.target.value)
-    setNumPeople(isNaN(value) ? 0 : value)
-  }
+  const { numPeople, handleInput } = useCalculator()
 
   return (
     <FormControl mt='2rem'>
@@ -20,10 +15,11 @@ export const InputPeople = () => {
           <Icon as={BsPersonFill} boxSize={4} fill='neutral.dark-grayish-cyan' />
         </InputLeftElement>
         <Input
-          onChange={handleNumPeople}
-          value={numPeople === 0 ? '' : numPeople}
+          onChange={handleInput}
+          value={numPeople === 0 ? '' : numPeople.toString()}
           type='number'
           placeholder='0'
+          name='numPeople'
           variant='filled'
           bgColor='neutral.very-light-grayish-cyan'
           color='neutral.dark-grayish-cyan'

@@ -2,20 +2,17 @@ import { Button } from '@chakra-ui/react'
 import { useCalculator } from '../../hooks/useCalculator'
 
 export const InputButton = ({ value, text }) => {
-  const { setPercentage } = useCalculator()
-
-  const handleButtonCustom = (e) => {
-    setPercentage(parseFloat(e.target.value))
-  }
+  const { handleInput } = useCalculator()
 
   return (
     <Button
-      onClick={handleButtonCustom}
+      onClick={handleInput}
       value={value}
       bgColor='neutral.very-dark-cyan'
       color='white'
       w='100%'
       h='45'
+      name='percentage'
       transition='.2s ease-in'
       fontSize='20px'
       _hover={{ bgColor: 'neutral.light-grayish-cyan' }}

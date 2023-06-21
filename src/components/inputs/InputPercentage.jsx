@@ -3,11 +3,7 @@ import { useCalculator } from '../../hooks/useCalculator'
 import { InputButton } from './InputButton'
 
 export const InputPercentage = () => {
-  const { setPercentage } = useCalculator()
-
-  const handleButtonCustom = (e) => {
-    setPercentage(parseFloat(e.target.value))
-  }
+  const { handleInput } = useCalculator()
 
   return (
     <Grid
@@ -34,12 +30,13 @@ export const InputPercentage = () => {
       </GridItem>
       <GridItem>
         <Input
-          onChange={handleButtonCustom}
+          onChange={handleInput}
           color='neutral.dark-grayish-cyan'
           h='45px'
           placeholder='Custom'
           bgColor='neutral.very-light-grayish-cyan'
           autoComplete='off'
+          name='percentage'
           _placeholder={{ color: 'neutral.dark-grayish-cyan' }}
         />
       </GridItem>

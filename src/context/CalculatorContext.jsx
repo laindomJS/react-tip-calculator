@@ -8,21 +8,22 @@ export const CalculatorProvider = ({ children }) => {
   const initialState = {
     bill: 0.00,
     percentage: 0,
-    numPeople: 1
+    numPeople: 0
   }
 
   const [state, dispatch] = useReducer(CalculatorReducer, initialState)
 
-  const setBill = (bill) => {
-    dispatch({ type: ACTIONS.SET_BILL, payload: bill })
-  }
+  const handleInput = e => {
+    const field = e.target.name
+    const value = parseFloat(e.target.value)
 
-  const setPercentage = (percentage) => {
-    dispatch({ type: ACTIONS.SET_PERCENTAGE, payload: percentage })
-  }
-
-  const setNumPeople = (numPeople) => {
-    dispatch({ type: ACTIONS.SET_NUM_PEOPLE, payload: numPeople })
+    dispatch({
+      type: ACTIONS.SET_FIELD,
+      payload: {
+        field,
+        value
+      }
+    })
   }
 
   const setReset = () => {
@@ -34,9 +35,7 @@ export const CalculatorProvider = ({ children }) => {
       bill: state.bill,
       percentage: state.percentage,
       numPeople: state.numPeople,
-      setBill,
-      setPercentage,
-      setNumPeople,
+      handleInput,
       setReset
     }}
     >
